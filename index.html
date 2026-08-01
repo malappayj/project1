@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg: #09111f;
+      --ink: #f7fbff;
+      --muted: #a8b6c7;
+      --aqua: #51d6ca;
+      --gold: #f6c85f;
+      --rose: #ef798a;
+      --panel: rgba(255, 255, 255, 0.09);
+      --line: rgba(255, 255, 255, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(81, 214, 202, 0.28), transparent 28%),
+        radial-gradient(circle at 78% 16%, rgba(239, 121, 138, 0.2), transparent 26%),
+        radial-gradient(circle at 56% 84%, rgba(246, 200, 95, 0.24), transparent 30%),
+        linear-gradient(135deg, #08111f 0%, #101a2c 48%, #111827 100%);
+      color: var(--ink);
+    }
+
+    main {
+      width: min(92vw, 780px);
+      padding: clamp(32px, 8vw, 72px);
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(22px);
+      isolation: isolate;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      z-index: -1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+    }
+
+    .spark {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .spark span {
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    p.kicker {
+      margin: 0 0 16px;
+      color: var(--aqua);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(3.25rem, 10vw, 7.5rem);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, var(--gold), var(--rose), var(--aqua));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .copy {
+      max-width: 560px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .primary {
+      background: var(--ink);
+      color: #101827;
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    a:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.36);
+    }
+
+    .orbit {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -70px;
+      top: -64px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 50%;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .orbit::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 24px;
+      left: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 26px rgba(246, 200, 95, 0.8);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(16px) rotate(8deg); }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        overflow: auto;
+        padding: 22px;
+      }
+
+      main {
+        border-radius: 22px;
+      }
+
+      .orbit {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="orbit" aria-hidden="true"></div>
+    <div class="spark" aria-hidden="true"><span>*</span></div>
+    <p class="kicker">A tiny first page</p>
+    <h1>Hello <span>World.</span></h1>
+    <p class="copy">
+      A sleek little HTML welcome screen with glassy depth, vivid color, and just enough motion to feel alive.
+    </p>
+    <div class="actions" aria-label="Page actions">
+      <a class="primary" href="#">Start here</a>
+      <a class="secondary" href="#">Explore</a>
+    </div>
+  </main>
+</body>
+</html>
