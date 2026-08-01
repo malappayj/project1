@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Raju</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg: #09111f;
+      --ink: #f7fbff;
+      --muted: #a8b6c7;
+      --aqua: #51d6ca;
+      --gold: #f6c85f;
+      --rose: #ef798a;
+      --panel: rgba(255, 255, 255, 0.09);
+      --line: rgba(255, 255, 255, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(81, 214, 202, 0.28), transparent 28%),
+        radial-gradient(circle at 78% 16%, rgba(239, 121, 138, 0.2), transparent 26%),
+        radial-gradient(circle at 56% 84%, rgba(246, 200, 95, 0.24), transparent 30%),
+        linear-gradient(135deg, #08111f 0%, #101a2c 48%, #111827 100%);
+      color: var(--ink);
+    }
+
+    main {
+      width: min(92vw, 780px);
+      padding: clamp(32px, 8vw, 72px);
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(22px);
+      isolation: isolate;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      z-index: -1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    nav a {
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.88rem;
+    }
+
+    a:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.36);
+    }
+
+    p.kicker {
+      margin: 0 0 16px;
+      color: var(--aqua);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, var(--gold), var(--rose), var(--aqua));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .copy {
+      max-width: 600px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .primary {
+      background: var(--ink);
+      color: #101827;
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    @media (max-width: 560px) {
+      body {
+        overflow: auto;
+        padding: 22px;
+      }
+
+      main {
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p class="kicker">About this page</p>
+    <h1>Meet <span>Raju</span></h1>
+    <p class="copy">
+      This about page keeps the same glowing, glass-style design while giving visitors a simple place to learn more.
+      Add your story, interests, goals, or project details here whenever you are ready.
+    </p>
+    <div class="actions" aria-label="About page actions">
+      <a class="primary" href="contact.html">Get in touch</a>
+      <a class="secondary" href="index.html">Back home</a>
+    </div>
+  </main>
+</body>
+</html>
