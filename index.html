@@ -114,6 +114,13 @@
       margin-top: 34px;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
     a {
       display: inline-flex;
       align-items: center;
@@ -140,6 +147,14 @@
     a:hover {
       transform: translateY(-3px);
       border-color: rgba(255, 255, 255, 0.36);
+    }
+
+    nav a {
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.88rem;
     }
 
     .orbit {
@@ -189,6 +204,11 @@
 <body>
   <main>
     <div class="orbit" aria-hidden="true"></div>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <div class="spark" aria-hidden="true"><span>*</span></div>
     <p class="kicker">A tiny first page</p>
     <h1>Hello <span>raju</span></h1>
@@ -196,8 +216,8 @@
       A sleek little HTML welcome screen with glassy depth, vivid color, and just enough motion to feel alive.
     </p>
     <div class="actions" aria-label="Page actions">
-      <a class="primary" href="#">Start here</a>
-      <a class="secondary" href="#">Explore</a>
+      <a class="primary" href="about.html">About page</a>
+      <a class="secondary" href="contact.html">Contact page</a>
     </div>
   </main>
 </body>
